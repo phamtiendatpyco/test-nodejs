@@ -1,4 +1,4 @@
-import dataUtil from '../util/data.util';
+import dataUtil from './data.util';
 
 exports.printTest1Result = () => {
     const maps = dataUtil.loadData('key1=value1;key2=value2\nkeyA=valueA');

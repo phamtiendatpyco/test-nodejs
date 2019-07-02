@@ -17,10 +17,13 @@ const getDiscountType = (user, product) => {
 };
 
 exports.getPercentageDiscountPrice = async (user, product) => {
-    if (product.getPrice().isNegativeNumber) {
+    if (math.isNegative(product.getPrice())) {
         throw new Error('Price is not allowed as a negative number!');
     }
     const discountType = getDiscountType(user, product);
-    const discountPrice = math.multiply(product.getPrice(), bignumber(discountType));
+    const discountPrice = math.multiply(
+        product.getPrice(),
+        bignumber(discountType)
+    );
     return math.subtract(product.getPrice(), bignumber(discountPrice));
 };

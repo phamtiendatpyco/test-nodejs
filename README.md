@@ -6,7 +6,7 @@
 ## How to build and test it
 - Use npm to run project: 
 ```
-npm run start-dev
+npm run start
 ```
 - To test run:
 ```

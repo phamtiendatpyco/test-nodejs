@@ -4,12 +4,12 @@
   "description": "Simple boilerplate for nodejs project",
   "main": "app.js",
   "scripts": {
-    "start-dev": "(nodemon --inspect --ignore node_modules --exec 'npm run eslint && babel-node src/app.js --env=dev') | bunyan",
-    "start-prod": "npm run build && node dist/app.js --env=prod",
+    "start": "nodemon --inspect --ignore node_modules --exec 'npm run eslint && babel-node src/app.js'",
     "eslint": "./node_modules/.bin/eslint .",
     "build": "babel . --ignore node_modules,test -d dist",
     "test": "jest --env=node src",
-    "coverage": "jest --env=node --collectCoverageFrom=src/**.js --collectCoverageFrom=!src/app/assignment/* --collectCoverageFrom=!src/app.js --coverage src"
+    "pretty": "prettier --write --tab-width 4 --arrow-parens always \"src/**/*.js\"",
+    "coverage": "jest --env=node --collectCoverageFrom=src/**.js --collectCoverageFrom=!src/app/test*/* --collectCoverageFrom=!src/app/test*/* --collectCoverageFrom=!src/app.js --coverage src"
   },
   "author": "dat.phamtien@pycogroup.com",
   "license": "ISC",
@@ -27,6 +27,7 @@
     "eslint-config-google": "^0.9.1",
     "jest": "^23.4.1",
     "nodemon": "^1.18.2",
+    "prettier": "1.18.2",
     "sinon": "^6.1.4"
   }
 }

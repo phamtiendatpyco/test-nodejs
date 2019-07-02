@@ -1,10 +1,10 @@
 import { bignumber } from 'mathjs';
 import moment from 'moment';
-import Bill from '../model/bill.model';
-import Product from '../model/product.model';
-import User from '../model/user.model';
-import { calculatePrice } from '../payment/payment';
-import ProductType from '../constants/productType';
+import Bill from './model/bill.model';
+import Product from './model/product.model';
+import User from './model/user.model';
+import { calculatePrice } from './payment/payment';
+import ProductType from './constants/productType';
 
 exports.printTest3Result = async () => {
     console.log('Discount Price:');
